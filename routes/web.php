@@ -33,3 +33,7 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     echo "contact";
 })->name('con');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
